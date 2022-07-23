@@ -1,0 +1,19 @@
+
+Step 1 => create virtual environment using cmd or terminal.
+			(i) within this folder open command prompt(cmd) or terminal.
+			(ii) then type: python -m venv numrecg
+
+Step 2 => activate virtual environment.
+			(iii) in cmd type:  .\numrecg\Scripts\activate  if it throws an error then try this:  .\numrecg\Scripts\activate.bat
+				or .\numrecg\Scripts\Activate.ps1
+	
+Step 3 => Install the dependencies.
+			(iv) in cmd type: pip install -r requirements.txt
+
+Step 4 => Run the application.
+			(v) in cmd type: python main.py
+
+Step 5 => Deactivate virtual environment.
+			(vi) After closing the gui in cmd type: deactivate 
+
+
