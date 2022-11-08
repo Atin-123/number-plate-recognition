@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>License Plate Recognition</title>
+</head>
+<body>
+    <h1>License Plate Recognition</h1>
+    <form action="#" method="POST" enctype="multipart/form-data">
+
+        {% csrf_token %}
+        {{ form.as_table }}
+        <input type="submit" value="upload"/>
+    </form>
+
+    {% if upload %}
+        <div>
+            <img src="/media/ml_output/process.jpg" alt="">
+        </div>
+        <table>
+            <tr>
+                <td>Car: </td>
+                {% for c in results.cnt %}
+                    <td><img src="/media/ml_output/roi_{{ c }}.jpg" alt=""></td>
+                {% endfor %}
+            </tr>
+            <tr>
+                <td>Car Number: </td>
+                {% for numbers in results.txt %}
+                    <td>{{ numbers }}</td>
+                {% endfor %}
+            </tr>
+        </table>
+    
+    {% endif %}
+
+</body>
+</html>
